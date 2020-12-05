@@ -4,15 +4,7 @@ import recipeView from './views/recipeView';
 import searchView from './views/searchView';
 import resulstView from './views/resultsView';
 
-if(module.hot){
-  module.hot.accept();
-}
-
-
-
 const recipeContainer = document.querySelector('.recipe');
-
-
 
 const controlRecipes = async function () {
   try {
@@ -44,12 +36,11 @@ const controlSearchResults = async function () {
     if(!query)return;
     await model.loadSearchResult(query);
     //console.log(model.state.search.results);
-    resulstView.render(model.state.search.results);
+    resulstView.render(model.controlSearchResultsPage());
   } catch (error) {
     console.log(error)
   }
 }
-
 
 
 const init = function () {
