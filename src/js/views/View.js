@@ -6,9 +6,12 @@ export default class View {
             return this.renderError();
         } 
         this._data = data;
+       
         const markup = this._generateMarkup();
         this._clear();
+         if(!markup)return
         this._parentElement.insertAdjacentHTML('afterbegin', markup);
+        console.log(markup)
         
     }
     _clear(){
