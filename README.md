@@ -10,7 +10,6 @@ DEMO : https://link
 
 <a href="https://awesome-github-readme-profile.netlify.app"><img src="https://raw.githubusercontent.com/AlexKonichek/Recipe-searching-app/master/src/img/Screenshot_11.jpg" alt="Awesome README Templates" /></a>
 
-<a href="https://awesome-github-readme-profile.netlify.app"><img src="https://forkify-v2.netlify.app/#5ed6604591c37cdc054bc8f7" alt="Awesome README Templates" /></a>
 
 
 
