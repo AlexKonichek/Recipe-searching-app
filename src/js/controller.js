@@ -16,6 +16,8 @@ const controlRecipes = async function () {
   }
   
   recipeView.renderSpiner();
+  //update results view to mark selected search result
+  resulstView.update(model.controlSearchResultsPage())
 
     //loading recipe
   await model.loadRecipe(id);
@@ -53,7 +55,7 @@ const controlServings = (newServings) => {
 model.updateServings(newServings);
 
   //update recipe view
-  recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe);
 
 };
 
