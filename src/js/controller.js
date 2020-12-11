@@ -3,6 +3,7 @@ import * as model from './model';
 import recipeView from './views/recipeView';
 import searchView from './views/searchView';
 import resulstView from './views/resultsView';
+import bookmarkView from './views/bookmarkView';
 import paginationView from './views/paginationView'
 import resultsView from './views/resultsView';
 
@@ -17,7 +18,8 @@ const controlRecipes = async function () {
   
   recipeView.renderSpiner();
   //update results view to mark selected search result
-  resulstView.update(model.controlSearchResultsPage())
+  resulstView.update(model.controlSearchResultsPage());
+  bookmarkView.update(model.state.bookmarks);
 
     //loading recipe
   await model.loadRecipe(id);
@@ -74,8 +76,10 @@ const paginationController = (goToPage) => {
     else {
       model.deleteBookmark(model.state.recipe.id)
      }
-   console.log(model.state.recipe)
+  
    recipeView.update(model.state.recipe);
+
+   bookmarkView.render(model.state.bookmarks);
  }
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
